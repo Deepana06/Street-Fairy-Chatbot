@@ -141,7 +141,13 @@ Update Recommendations: Updates the planner state based on the user's action (e.
 Handle User Decisions: Captures decisions such as 'I want to go to this place' or 'What is the next best recommendation?' and updates the flow accordingly.
 
 Feedback Loop: Updates recommendations based on the feedback the user gives (e.g., "I liked this business").
-
+# 📂Embeddings_Snowflake.py
+Connects to Snowflake securely using environment variables.
+Fetches business data including attributes, categories, ratings, and hours of operation.
+Cleans and flattens nested JSON fields like attributes and hours to human-readable text.
+Generates embeddings using paraphrase-MiniLM-L6-v2 from SentenceTransformers.
+Creates a FAISS index for fast similarity search (optional step).
+Inserts enriched records including vector embeddings into a Snowflake table BUSINESS_EMBEDDINGS.
 # 📁DBT Models/
 This directory contains all DBT models and configuration files used for transforming and enriching the business dataset for the recommendation engine.
 
@@ -179,7 +185,13 @@ Schema and data quality tests for DBT models.
 
 Documents each model and its columns.
 Adds tests for primary/foreign keys (e.g., uniqueness and not-null constraints) to ensure data quality.
-
+# 📁data-preprocessing/
+# Filtered_Attribute_Creation.py
+This script connects to Snowflake, filters out unwanted or meaningless attribute values (like "false", "none", or "no") from the FINAL_ATTRIBUTE_MODEL table, groups valid attributes by BUSINESS_ID, and inserts the cleaned attributes as JSON into the Filtered_Attributes table.
+# S3_Data_Load.py
+This script uses the boto3 library to connect to AWS S3, lists all available buckets, uploads a local CSV file (top5_states_businesses.csv) to the damgbusinesspractice S3 bucket, and then lists all objects in that bucket to confirm the upload.
+# S3_Snowflake_DataLoad.py
+This script connects to Snowflake and loads data from a CSV file stored in an S3 stage  into the Business table. It uses the COPY INTO command with CSV formatting options to handle headers and quoted fields.
 # 📄 Requirements.txt
 Lists all Python dependencies required to run the project, including libraries for data processing, machine learning, and web application development.
 
