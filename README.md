@@ -1,4 +1,4 @@
-# Street-Fairy-Chatbot
+# Street-Fairy-Chatbot Implementation
 Street-Fairy: Business Recommendations ChatBot with Personalized Itinerary Planning
 Street Fairy is a business recommendation system that utilizes Yelp dataset to provide personalized suggestions to users.
 The project integrates Snowflake embeddings and Streamlit to deliver real-time recommendations through a user-friendly interface.
@@ -13,9 +13,9 @@ Data Ingestion: Yelp dataset is stored in AWS S3 bucket.
 
 **Data Processing:**
 DBT models are created on the Snowflake DWH - Business Model, Attribute Model, Categories model which would be base for the Business Embeddings Table 
-Embeddings are created on the Business Embeddings table to capture their features.
+Embeddings are created on the Business Embeddings table (MiniML Model) to capture their features.
 User preferences are analyzed based on their reviews and interactions.
-Recommendation Engine: An LLM (Large Language Model) processes embeddings to generate personalized recommendations.
+
 
 Front-End: A Streamlit app provides an interface for users to receive and interact with recommendations.
 ![image](https://github.com/user-attachments/assets/76c3cdf5-9d40-424e-9499-a31ddd8860fa)
@@ -25,3 +25,15 @@ Real-Time Recommendations: Get instant business suggestions based on user prefer
 Interactive Interface: User-friendly Streamlit app for seamless interaction.
 Scalable Architecture: Utilizes Snowflake and AWS S3 for efficient data storage and processing.
 Advanced Analytics: Employs embeddings and LLMs for deep understanding of business features and user preferences.
+
+**Login Page:**
+![image](https://github.com/user-attachments/assets/10575529-c998-4ed4-90d0-6c75bc62cd02)
+
+**Recommendation Page:**
+![image](https://github.com/user-attachments/assets/77c418ac-da61-44fc-987f-7893c7383959)
+
+**Feedback Loop:**
+![image](https://github.com/user-attachments/assets/f2faab0a-fee5-4c54-8e8a-341296df505b)
+
+# 📂 Chatbot - FAISS_Implement/
+# main.py
