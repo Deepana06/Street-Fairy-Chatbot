@@ -1,0 +1,25 @@
+# Snowflake integration
+snowflake-connector-python
+snowflake-snowpark-python
+
+# Vector store & embeddings
+faiss-cpu
+sentence-transformers
+
+# Optional: for LLM integration (like OpenAI)
+openai
+
+# Environment variable support
+python-dotenv
+
+# Location handling
+geopy
+
+# Web app interface
+streamlit
+
+# Progress bar during embedding generation
+tqdm
+
+# HTTP requests (for LLM API like Ollama)
+requests
