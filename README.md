@@ -184,8 +184,9 @@ Adds tests for primary/foreign keys (e.g., uniqueness and not-null constraints) 
 Lists all Python dependencies required to run the project, including libraries for data processing, machine learning, and web application development.
 
 # Usage:
-<pre> ```bash streamlit run .\main.py ``` </pre>
-
-<pre> ```bash ollama run mistral ``` </pre>
+```bash
+streamlit run .\main.py
+ollama run mistral
+```
 
 
