@@ -1,18 +1,19 @@
 # Street-Fairy-Chatbot
 Street-Fairy: Business Recommendations ChatBot with Personalized Itinerary Planning
-Street Fairy is a business recommendation system that leverages the Yelp dataset to provide personalized suggestions to users. The project integrates Snowflake and Streamlit to deliver real-time recommendations through a user-friendly interface.
+Street Fairy is a business recommendation system that utilizes Yelp dataset to provide personalized suggestions to users.
+The project integrates Snowflake embeddings and Streamlit to deliver real-time recommendations through a user-friendly interface.
 
-Overview
-The project aims to recommend businesses to users based on their preferences and reviews. It processes data from the Yelp dataset, stores it in Snowflake, and utilizes embeddings to understand business characteristics. A Streamlit app serves as the front-end, allowing users to interact with the recommendation system seamlessly.
+**Overview**
+The project aims to recommend businesses to users based on their preferences and recent visits. It processes data from the Yelp dataset, stores it in Snowflake, and utilizes embeddings to understand business characteristics. A Streamlit app serves as the front-end, allowing users to interact with the recommendation system seamlessly.
 
-Architecture
-Data Ingestion: Yelp dataset is stored in AWS S3.
+**Architecture**
+Data Ingestion: Yelp dataset is stored in AWS S3 bucket.
 
-Data Loading: Snowpipe is used to load data from S3 into Snowflake tables (business, reviews, users).
+**Data Loading**: Snowpipe is used to load data from S3 into Snowflake tables (business, reviews, users).
 
-Data Processing:
-
-Embeddings are created for businesses to capture their features.
+**Data Processing:**
+DBT models are created on the Snowflake DWH - Business Model, Attribute Model, Categories model which would be base for the Business Embeddings Table 
+Embeddings are created on the Business Embeddings table to capture their features.
 User preferences are analyzed based on their reviews and interactions.
 Recommendation Engine: An LLM (Large Language Model) processes embeddings to generate personalized recommendations.
 
